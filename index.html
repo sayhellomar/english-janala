@@ -98,39 +98,20 @@
                 <div class="learn-vocabularies space-y-10">
                     <h2 class="text-4xl font-semibold text-center"><span class="text-[#00BCFF]">Let's</span> Learn Vocabularies</h2>
                     <div class="button-wrapper">
-                        <ul class="flex justify-center navbar-wrapper space-x-4">
-                            <li>
-                                <a class="btn btn-outline btn-primary">
-                                    <img src="./images/fa-book-open.png" alt="">
-                                    Lesson - 1
-                                </a>
-                            </li>
-                            <li>
-                                <a class="btn btn-outline btn-primary">
-                                    <img src="./images/fa-book-open.png" alt="">
-                                    Lesson - 2
-                                </a>
-                            </li>
-                            <li>
-                                <a class="btn btn-outline btn-primary">
-                                    <img src="./images/fa-book-open.png" alt="">
-                                    Lesson - 3
-                                </a>
-                            </li>
-                        </ul>
+                        <ul class="flex justify-center navbar-wrapper space-x-4" id="button-level"></ul>
                     </div>
-                    <div id="lesson-wrapper" class="bg-[#F8F8F8] rounded-xl">
-                        <div class="no-lesson-selected space-y-4 text-center py-20 px-5 hidden">
+                    <div id="lesson-wrapper" class="bg-[#F8F8F8] rounded-xl p-6 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 min-h-80">
+                        <div id="no-lesson-selected" class="no-lesson-selected space-y-4 text-center py-20 px-5 col-span-full">
                             <p class="text-sm text-[#79716B] font-bangla">আপনি এখনো কোন Lesson Select করেন নি</p>
                             <h2 class="font-bangla text-4xl">একটি Lesson Select করুন।</h2>
                         </div>
-                        <div class="no-lesson-selected space-y-4 text-center py-20 px-5 hidden">
+                        <!-- <div id="no-lesson-found" class="no-lesson-found space-y-4 text-center py-20 px-5 hidden col-span-full">
                             <img class="mx-auto" src="./images/alert-error.png" alt="Error">
                             <p class="text-sm text-[#79716B] font-bangla">এই Lesson এ এখনো কোন Vocabulary যুক্ত করা হয়নি।</p>
                             <h2 class="font-bangla text-4xl">নেক্সট Lesson এ যান</h2>
-                        </div>
-                        <div class="lesson-vocabularies p-6 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
-                            <div class="vocabulary-item space-y-4 text-center bg-white rounded-xl p-14">
+                        </div> -->
+
+                            <!-- <div class="vocabulary-item space-y-4 text-center bg-white rounded-xl p-14">
                                 <h3 class="text-4xl font-bold">Eager</h3>
                                 <p class="text-xl font-medium">Meaning /Pronounciation</p>
                                 <h3 class="font-bangla font-semibold text-3xl">"আগ্রহী / ইগার"</h3>
@@ -147,8 +128,8 @@
                                     <button class="bg-[#1A91FF10] p-3 rounded-lg cursor-pointer"><span class="text-2xl text-[#374957]"><i class="fa-solid fa-circle-info"></i></span></button>
                                     <button class="bg-[#1A91FF10] p-3 rounded-lg cursor-pointer"><span class="text-2xl text-[#374957]"><i class="fa-solid fa-volume-high"></i></span></button>
                                 </div>
-                            </div>
-                        </div>
+                            </div> -->
+
                     </div>
                 </div>
             </div>
@@ -209,5 +190,7 @@
             </div>
         </div>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
