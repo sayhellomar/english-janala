@@ -9,6 +9,32 @@
     font-style: normal;
 }
 
-.navbar-wrapper li a:hover img {
+.navbar-wrapper li a:hover img,
+#button-level li a:hover:before,
+#button-level li.active a:before {
     filter: brightness(0) invert(1);
+}
+
+#button-level li a {
+    position: relative;
+}
+
+#button-level li a:before {
+    background-image: url('images/fa-book-open.png');
+    position: absolute;
+    content: '';
+    top: 50%;
+    transform: translateY(-50%);
+    left: 12px;
+    width: 16px;
+    height: 13px;
+}
+
+#button-level li a {
+    padding-left: 35px
+}
+
+#button-level li.active a {
+    background-color: #422ad5;
+    color: #FFF;
 }
