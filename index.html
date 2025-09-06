@@ -13,8 +13,8 @@
 </head>
 <body>
     <header class="bg-[#BADEFF26] shadow-sm">
-        <div class="max-w-[1760px] mx-auto">
-            <div class="navbar">
+        <div class="w-11/12 2xl:w-full 2xl:max-w-[1760px] mx-auto">
+            <div class="navbar p-0">
                 <div class="navbar-start">
                     <div class="dropdown">
                         <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
@@ -76,8 +76,8 @@
     </header>
 
     <main>
-        <section class="banner-area py-8 lg:py-30 px-2 2xl:px-0">
-            <div class="max-w-[1760px] mx-auto">
+        <section class="banner-area py-8 lg:py-30">
+            <div class="w-11/12 2xl:w-full 2xl:max-w-[1760px] mx-auto">
                 <div class="banner flex flex-col-reverse lg:flex-row gap-0 lg:gap-20 xl:gap-60 items-center justify-between">
                     <div class="banner-left space-y-8 flex-1 text-center lg:text-left">
                         <h2 class="text-5xl font-semibold"><span class="text-[#00BCFF]">English</span> is Easy!!</h2>
@@ -94,12 +94,22 @@
         </section>
 
 
-        <section class="learn-vocabularies-area px-2 2xl:px-0">
-            <div class="max-w-[1760px] mx-auto">
+        <section class="learn-vocabularies-area">
+            <div class="w-11/12 2xl:w-full 2xl:max-w-[1760px] mx-auto">
                 <div class="learn-vocabularies space-y-10">
                     <h2 class="text-4xl font-semibold text-center"><span class="text-[#00BCFF]">Let's</span> Learn Vocabularies</h2>
                     <div class="button-wrapper">
-                        <ul class="flex justify-center navbar-wrapper space-x-4" id="button-level"></ul>
+                        <ul class="flex justify-center navbar-wrapper flex-wrap gap-4" id="button-level"></ul>
+                    </div>
+
+                    <div class="text-center block">
+                        <div class="join">
+                            <input id="search-word-input" class="input join-item w-full md:w-96 focus:outline-none" placeholder="Search word" />
+                            <div class="indicator">
+                                <button id="search-word-btn" class="btn btn-primary join-item">Search</button>
+                            </div>
+                        </div>
+                        <p id="no-word-error" class="mt-3 opacity-80 text-red-500 font-medium hidden">Please type something in the search field</p>
                     </div>
 
                     <div id="loading-bar" class="bg-[#F8F8F8] w-full rounded-xl text-center py-20 px-5 hidden"><span class="loading loading-bars loading-xl"></span></div>
@@ -108,38 +118,24 @@
                             <p class="text-sm text-[#79716B] font-bangla">আপনি এখনো কোন Lesson Select করেন নি</p>
                             <h2 class="font-bangla text-4xl">একটি Lesson Select করুন।</h2>
                         </div>
-                        <!-- <div id="no-lesson-found" class="no-lesson-found space-y-4 text-center py-20 px-5 hidden col-span-full">
-                            <img class="mx-auto" src="./images/alert-error.png" alt="Error">
-                            <p class="text-sm text-[#79716B] font-bangla">এই Lesson এ এখনো কোন Vocabulary যুক্ত করা হয়নি।</p>
-                            <h2 class="font-bangla text-4xl">নেক্সট Lesson এ যান</h2>
-                        </div> -->
-
-                            <!-- <div class="vocabulary-item space-y-4 text-center bg-white rounded-xl p-14">
-                                <h3 class="text-4xl font-bold">Eager</h3>
-                                <p class="text-xl font-medium">Meaning /Pronounciation</p>
-                                <h3 class="font-bangla font-semibold text-3xl">"আগ্রহী / ইগার"</h3>
-                                <div class="buttons flex justify-between mt-16">
-                                    <button class="bg-[#1A91FF10] p-3 rounded-lg cursor-pointer"><span class="text-2xl text-[#374957]"><i class="fa-solid fa-circle-info"></i></span></button>
-                                    <button class="bg-[#1A91FF10] p-3 rounded-lg cursor-pointer"><span class="text-2xl text-[#374957]"><i class="fa-solid fa-volume-high"></i></span></button>
-                                </div>
-                            </div>
-                            <div class="vocabulary-item space-y-4 text-center bg-white rounded-xl p-14">
-                                <h3 class="text-4xl font-bold">Eager</h3>
-                                <p class="text-xl font-medium">Meaning /Pronounciation</p>
-                                <h3 class="font-bangla font-semibold text-3xl">"আগ্রহী / ইগার"</h3>
-                                <div class="buttons flex justify-between mt-16">
-                                    <button class="bg-[#1A91FF10] p-3 rounded-lg cursor-pointer"><span class="text-2xl text-[#374957]"><i class="fa-solid fa-circle-info"></i></span></button>
-                                    <button class="bg-[#1A91FF10] p-3 rounded-lg cursor-pointer"><span class="text-2xl text-[#374957]"><i class="fa-solid fa-volume-high"></i></span></button>
-                                </div>
-                            </div> -->
-
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="faq-area py-40 px-2 2xl:px-0">
-            <div class="max-w-[1760px] mx-auto">
+        <dialog id="word_details_show" class="modal modal-bottom sm:modal-middle">
+            <div class="modal-box p-10">
+                <div id="modal-container" class="space-y-4"></div>
+                <div class="modal-action">
+                <form method="dialog">
+                    <button class="btn">Close</button>
+                </form>
+                </div>
+            </div>
+        </dialog>
+        
+        <section class="faq-area py-14 lg:py-40">
+            <div class="w-11/12 2xl:w-full 2xl:max-w-[1760px] mx-auto">
                 <div class="faq">
                     <h2 class="text-5xl font-semibold text-center"><span class="text-[#00BCFF]">Frequently</span> Asked Questions</h2>
                     <div class="accordion-area space-y-2 mt-20">
@@ -169,11 +165,11 @@
         </section>
     </main>
 
-    <footer class="footer-area border-t-[3px] border-[#FFEBEB] py-24 px-2 2xl:px-0">
-        <div class="max-w-[1760px] mx-auto">
-            <div class="footer flex items-end justify-between">
-                <div class="footer-left space-y-1">
-                    <a href="./index.html" class="text-xl font-semibold flex items-center gap-1">
+    <footer class="footer-area border-t-[3px] border-[#FFEBEB] py-10 lg:py-24">
+        <div class="w-11/12 2xl:w-full 2xl:max-w-[1760px] mx-auto">
+            <div class="footer-inner flex items-center md:items-end flex-col md:flex-row justify-center md:justify-between">
+                <div class="footer-left text-center md:text-left">
+                    <a href="./index.html" class="text-xl font-semibold flex gap-1 w-full justify-center md:justify-start">
                         <span>English</span>
                         <img src="./images/logo.png" alt="English Janala">
                         <span>জানালা</span>
@@ -181,7 +177,7 @@
                     <h5 class="text-xl font-bangla mt-3">ইংরেজি শিখুন সহজে</h5>
                     <p class="font-bangla">Providing ED-Tech Applications since 2025</p>
                 </div>
-                <div class="footer-right">
+                <div class="footer-right mt-4 md:mt-0 text-center md:text-left">
                     <p class="uppercase text-[#18181B] text-sm">Follow Us</p>
                     <ul class="flex gap-1">
                         <li><a href="#"><span class="text-lg"><i class="fa-brands fa-facebook"></i></span></a></li>
